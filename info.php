@@ -2,6 +2,7 @@
 <body>
     Welcome to the secret santa event (with a twist)!<br><br>
     Well let's just get right to it. The general concept:<br>
+    Before partaking please insert your player into the database with the "add your user" button, use your first name please.<br>
     Every participant buys a few CHEAP and preferably funny/obcure gifts, for a total of no more than 15 euros.<br>
     The admin (I) will assign all the gifts to a "starting pile", in the first phase of the game every player gets to<br>
     pick a gift from the pile one by one. After the pile is empty and the gifts are, if nothing weird happened, evenly<br>
