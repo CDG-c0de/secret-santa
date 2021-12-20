@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="style.css">
 <?php
     session_start();
     $usrname = $_SESSION['username'];
@@ -25,3 +26,10 @@
         echo "<span style='color: #85c1e9 ;'>$time</span><br>";
     }
 ?>
+<br>
+<form action='log.php' method='POST' id='form'>
+    <input type='submit' class='button-34' value='refresh' id='submit' name='submit'>
+</form>
+<form action='index.php' method='POST' id='form'>
+    <input type='submit' class='button-34' value='home' id='submit' name='submit'>
+</form>

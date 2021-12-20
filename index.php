@@ -40,6 +40,14 @@ if (isset($_SESSION['username'])) {
             echo "</form>";
         }
         ?>
+        <form action="info.php" method="POST" id="form">
+            <input type="submit" class="button-34" value="Info/instructions" id="submit" name="submit">
+        </form>
+        <?php
+        if (!isset($_SESSION['username'])) {
+            echo "<br>";    
+        }
+        ?>
         <form action="inserter.php" method="POST" id="form">
             <input type="submit" class="button-34" value="add your user" id="submit" name="submit">
         </form>
