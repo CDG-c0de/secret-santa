@@ -11,6 +11,18 @@ if (isset($_POST['submit_user'])) {
         echo "<input type='submit' class='button-34' value='submit' id='submit' name='submit'></form><br>";
     }
     else {
+        if(!empty($_SERVER['HTTP_CLIENT_IP'])) {  
+            $ip = $_SERVER['HTTP_CLIENT_IP'];  
+        }  
+        elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {  
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];  
+        }    
+        else {  
+            $ip = $_SERVER['REMOTE_ADDR'];  
+        }  
+        $datetime = date("Y-m-d H:i:s");
+        $usridgot = $_POST['user'];
+        mysqli_query($link, "INSERT INTO `Log`(`user_from`, `type`, `time`) VALUES ('$usridgot', '$ip', '$datetime')") or die(mysqli_error($link)); 
         $_SESSION['username'] = $_POST['user'];
     }
 }
