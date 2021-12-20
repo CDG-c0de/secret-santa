@@ -2,16 +2,19 @@
 <?php
 include "connection.php";
 session_start();
+if (!isset($_SESSION['username'])){
+    echo "<form action='index.php' method='POST' id='form_refresh'>";
+    echo "<input type='hidden' id='refresh' name='refresh' value='refresh'>";
+    echo "</form>";
+    echo "<script>document.getElementById('form_refresh').submit()</script>";
+}
 if (isset($_SESSION['username'])) {
     $yes = $_SESSION['username'];
     $result = mysqli_fetch_assoc(mysqli_query($link, "SELECT * FROM `Participants` WHERE `id`=$yes"));
     echo "Current user: " . $result['naam'];
 }
-else {
-    echo "<form action='index.php' method='POST' id='form_refresh'>";
-    echo "<input type='hidden' id='refresh' name='refresh' value='refresh'>";
-    echo "</form>";
-    echo "<script>document.getElementById('form_refresh').submit()</script>";
+if ($result['naam'] != "admin") {
+    header("location:index.php");
 }
 ?>
 <form action="inserter_g_php.php" method="POST" id="form">

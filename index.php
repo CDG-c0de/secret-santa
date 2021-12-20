@@ -2,7 +2,17 @@
 include "connection.php";
 session_start();
 if (isset($_POST['submit_user'])) {
-    $_SESSION['username'] = $_POST['user'];
+    $usrid = $_POST['user'];
+    $get_name = mysqli_fetch_assoc(mysqli_query($link, "SELECT `naam` FROM `Participants` WHERE `id` = $usrid")) or die(mysqli_error($link));
+    if ($get_name['naam'] == "admin") {
+        echo "<form action='admin_login.php' method='POST' id='form'>";
+        echo "<label for='fname'>password:</label>";
+        echo "<input type='password' id='password' name='password'><br><br>";
+        echo "<input type='submit' class='button-34' value='submit' id='submit' name='submit'></form><br>";
+    }
+    else {
+        $_SESSION['username'] = $_POST['user'];
+    }
 }
 if (isset($_SESSION['username'])) {
     $yes = $_SESSION['username'];
