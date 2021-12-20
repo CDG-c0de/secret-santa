@@ -84,6 +84,7 @@ select::-ms-expand {
     background-color: #34495e;
     transition: .25s all ease;
     pointer-events: none;
+    break-after: always;
 }
 
 /* Transition */

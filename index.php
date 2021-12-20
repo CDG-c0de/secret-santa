@@ -38,8 +38,6 @@ if (isset($_SESSION['username'])) {
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="UTF-8">
-
-        <title>Dovecove | Home</title>
     </head>
     <body>
         <?php
@@ -53,7 +51,7 @@ if (isset($_SESSION['username'])) {
                 }
             echo "</select>";
             echo "</div><br>";
-            echo "<input type='submit' class='button-34' value='set user', id='submit_user', name='submit_user'/>";
+            echo "<input type='submit' class='button-34' value='login to set user', id='submit_user', name='submit_user'/>";
             echo "</form><br><br><br>";
         }
         else {
@@ -62,16 +60,16 @@ if (isset($_SESSION['username'])) {
             echo "</form>";
         }
         ?>
-        <form action="info.php" method="POST" id="form">
-            <input type="submit" class="button-34" value="Info/instructions" id="submit" name="submit">
+        <form action="inserter.php" method="POST" id="form">
+            <input type="submit" class="button-34" value="add your user" id="submit" name="submit">
         </form>
         <?php
         if (!isset($_SESSION['username'])) {
             echo "<br>";    
         }
         ?>
-        <form action="inserter.php" method="POST" id="form">
-            <input type="submit" class="button-34" value="add your user" id="submit" name="submit">
+        <form action="info.php" method="POST" id="form">
+            <input type="submit" class="button-34" value="Info/instructions" id="submit" name="submit">
         </form>
         <?php
         if (!isset($_SESSION['username'])) {

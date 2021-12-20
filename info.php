@@ -1,4 +1,8 @@
 <link rel="stylesheet" href="style.css">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+</head>
 <body>
     Welcome to the secret santa event (with a twist)!<br><br>
     Well let's just get right to it. The general concept:<br>
