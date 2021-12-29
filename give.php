@@ -29,7 +29,7 @@ if (isset($_POST['refresh'])) {
             $yes = $_SESSION['username'];
             $res = mysqli_query($link, "SELECT G.id, G.code, G.des FROM Gifts G WHERE G.id IN (SELECT L.gift_id FROM Link L WHERE L.par_id = $yes)");
             while($row = mysqli_fetch_assoc($res)) {
-                echo '<option value="' . $row['id'] . '">' . 'key: ' . $row['code'] . ' des.: ' . $row['code'] . '</option>';
+                echo '<option value="' . $row['id'] . '">' . 'key: ' . $row['code'] . ' des.: ' . $row['des'] . '</option>';
             }
         ?>
         </select>
