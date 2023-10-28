@@ -5,6 +5,12 @@
 </head>
 <?php
     session_start();
+    if(!$_SESSION['username']) {
+        echo "<form action='index.php' method='POST' id='form_refresh'>";
+        echo "<input type='hidden' id='refresh' name='refresh' value='refresh'>";
+        echo "</form>";
+        echo "<script>document.getElementById('form_refresh').submit()</script>";
+    }
     $usrname = $_SESSION['username'];
     include "connection.php";
     $result = mysqli_query($link, "SELECT * FROM `Log`") or die(mysqli_error($link));
